@@ -40,17 +40,17 @@
 <body class="g-sidenav-show  bg-gray-100">
     @php
         $topSidenavArray = ['wallet', 'profile'];
-        $topSidenavArray2 = ['signin', 'signup'];
-        $topSidenavArray3 = ['RTL'];
+        $topSidenavTransparent = ['signin', 'signup'];
+        $topSidenavRTL = ['RTL'];
     @endphp
     @if (in_array(request()->route()->getName(),
             $topSidenavArray))
         <x-sidenav-top />
     @elseif(in_array(request()->route()->getName(),
-            $topSidenavArray2))
+            $topSidenavTransparent))
 
     @elseif(in_array(request()->route()->getName(),
-            $topSidenavArray3))
+            $topSidenavRTL))
     @else
         <x-app.sidebar />
     @endif
