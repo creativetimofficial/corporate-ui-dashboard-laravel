@@ -124,14 +124,14 @@
                 </div>
             </li>
             <li class="nav-item border-start my-0 pt-2">
-                <a class="nav-link position-relative ms-0 ps-2 py-2 {{ is_current_route('profile') ? 'active' : '' }}"
-                    href="{{ route('profile') }}">
+                <a class="nav-link position-relative ms-0 ps-2 py-2 {{ is_current_route('users.profile') ? 'active' : '' }}"
+                    href="{{ route('users.profile') }}">
                     <span class="nav-link-text ms-1">User profile</span>
                 </a>
             </li>
             <li class="nav-item border-start my-0 pt-2">
-                <a class="nav-link position-relative ms-0 ps-2 py-2 {{ is_current_route('signin') ? 'active' : '' }}"
-                    href="{{ route('signin') }}">
+                <a class="nav-link position-relative ms-0 ps-2 py-2 {{ is_current_route('users-management') ? 'active' : '' }}"
+                    href="{{ route('users-management') }}">
                     <span class="nav-link-text ms-1">User Management</span>
                 </a>
             </li>
