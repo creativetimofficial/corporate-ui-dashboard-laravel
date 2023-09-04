@@ -14,5 +14,33 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashboard');
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
+
+Route::get('/tables', function () {
+    return view('tables');
+})->name('tables');
+
+Route::get('/wallet', function () {
+    return view('wallet');
+})->name('wallet');
+
+Route::get('/RTL', function () {
+    return view('RTL');
+})->name('RTL');
+
+Route::get('/profile', function () {
+    return view('account-pages.profile');
+})->name('profile');
+
+Route::get('/signin', function () {
+    return view('account-pages.signin');
+})->name('signin');
+
+Route::get('/signup', function () {
+    return view('account-pages.signup');
+})->name('signup');
