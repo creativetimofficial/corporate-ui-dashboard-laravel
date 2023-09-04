@@ -20,6 +20,16 @@
                     <input type="text" class="form-control ps-0" placeholder="Search">
                 </div>
             </div>
+            <div class="mb-0 font-weight-bold breadcrumb-text text-white">
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+
+                    <a href="login" onclick="event.preventDefault();
+                this.closest('form').submit();">
+                        <button class="btn btn-sm  btn-white  mb-0 me-1" type="submit">Log out</button>
+                    </a>
+                </form>
+            </div>
             <ul class="navbar-nav  justify-content-end">
                 <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
                     <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
@@ -131,7 +141,7 @@
                 </li>
                 <li class="nav-item ps-2 d-flex align-items-center">
                     <a href="javascript:;" class="nav-link text-body p-0">
-                        <img src="../assets/img/team-2.jpg" class="avatar avatar-sm" alt="avatar" />
+                        <img src="../assets/img/default-avatar.png" class="avatar avatar-sm" alt="avatar" />
                     </a>
                 </li>
             </ul>
