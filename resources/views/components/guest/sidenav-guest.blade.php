@@ -14,40 +14,6 @@
         </button>
         <div class="collapse navbar-collapse" id="navigation">
             <ul class="navbar-nav mx-auto ms-xl-auto">
-                {{-- <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center me-2 " aria-current="page"
-                        href="{{ route('dashboard') }}">
-                        <svg width="14" height="14" viewBox="0 0 26 26" version="1.1"
-                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                            fill="currentColor" class="opacity-6 me-1">
-                            <g id="dashboard" stroke="none" stroke-width="1" fill-rule="evenodd">
-                                <g id="template" transform="translate(1.000000, 1.000000)">
-                                    <path
-                                        d="M0,1.71428571 C0,0.76752 0.76752,0 1.71428571,0 L22.2857143,0 C23.2325143,0 24,0.76752 24,1.71428571 L24,5.14285714 C24,6.08962286 23.2325143,6.85714286 22.2857143,6.85714286 L1.71428571,6.85714286 C0.76752,6.85714286 0,6.08962286 0,5.14285714 L0,1.71428571 Z">
-                                    </path>
-                                    <path
-                                        d="M0,12 C0,11.0532171 0.76752,10.2857143 1.71428571,10.2857143 L12,10.2857143 C12.9468,10.2857143 13.7142857,11.0532171 13.7142857,12 L13.7142857,22.2857143 C13.7142857,23.2325143 12.9468,24 12,24 L1.71428571,24 C0.76752,24 0,23.2325143 0,22.2857143 L0,12 Z">
-                                    </path>
-                                    <path
-                                        d="M18.8571429,10.2857143 C17.9103429,10.2857143 17.1428571,11.0532171 17.1428571,12 L17.1428571,22.2857143 C17.1428571,23.2325143 17.9103429,24 18.8571429,24 L22.2857143,24 C23.2325143,24 24,23.2325143 24,22.2857143 L24,12 C24,11.0532171 23.2325143,10.2857143 22.2857143,10.2857143 L18.8571429,10.2857143 Z">
-                                    </path>
-                                </g>
-                            </g>
-                        </svg>
-                        Dashboard
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center me-2 " href="{{ route('profile') }}">
-                        <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                            fill="currentColor" class="opacity-6 me-1">
-                            <path fill-rule="evenodd"
-                                d="M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
-                                clip-rule="evenodd" />
-                        </svg>
-                        <span>Profile</span>
-                    </a>
-                </li> --}}
                 <li class="nav-item">
                     <a class="nav-link d-flex align-items-center me-2 {{ is_current_route('sign-up') ? 'active' : '' }}"
                         href="{{ route('sign-up') }}">
