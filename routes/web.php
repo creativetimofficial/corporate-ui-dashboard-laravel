@@ -25,23 +25,23 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->name('dashboard');
+})->name('dashboard')->middleware('auth');
 
 Route::get('/tables', function () {
     return view('tables');
-})->name('tables');
+})->name('tables')->middleware('auth');
 
 Route::get('/wallet', function () {
     return view('wallet');
-})->name('wallet');
+})->name('wallet')->middleware('auth');
 
 Route::get('/RTL', function () {
     return view('RTL');
-})->name('RTL');
+})->name('RTL')->middleware('auth');
 
 Route::get('/profile', function () {
     return view('account-pages.profile');
-})->name('profile');
+})->name('profile')->middleware('auth');
 
 Route::get('/signin', function () {
     return view('account-pages.signin');
@@ -49,7 +49,7 @@ Route::get('/signin', function () {
 
 Route::get('/signup', function () {
     return view('account-pages.signup');
-})->name('signup');
+})->name('signup')->middleware('guest');
 
 Route::get('/sign-up', [RegisterController::class, 'create'])
     ->middleware('guest')
@@ -84,6 +84,6 @@ Route::get('/reset-password/{token}', [ResetPasswordController::class, 'create']
 Route::post('/reset-password', [ResetPasswordController::class, 'store'])
     ->middleware('guest');
 
-Route::get('/laravel-examples/user-profile', [ProfileController::class, 'index'])->name('users.profile');
-Route::put('/laravel-examples/user-profile/update', [ProfileController::class, 'update'])->name('users.update');
+Route::get('/laravel-examples/user-profile', [ProfileController::class, 'index'])->name('users.profile')->middleware('auth');
+Route::put('/laravel-examples/user-profile/update', [ProfileController::class, 'update'])->name('users.update')->middleware('auth');
 Route::get('/laravel-examples/users-management', [UserController::class, 'index'])->name('users-management')->middleware('auth');
