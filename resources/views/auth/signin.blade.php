@@ -15,7 +15,11 @@
                             <div class="card card-plain mt-8">
                                 <div class="card-header pb-0 text-left bg-transparent text-center">
                                     <h3 class="font-weight-black text-dark display-6">Welcome back</h3>
-                                    <p class="mb-0">Welcome back! Please enter your details.</p>
+                                    <p class="mb-0">Welcome back!</p>
+                                    <p class="mb-0">Create a new acount<br></p>
+                                    <p class="mb-0">OR Sign in with these credentials:</p>
+                                    <p class="mb-0">Email: <b>admin@corporateui.com</b></p>
+                                    <p class="mb-0">Password: <b>secret</b></p>
                                 </div>
                                 <div class="text-center">
                                     @if (session('status'))
@@ -32,22 +36,18 @@
                                 <div class="card-body">
                                     <form role="form" class="text-start" method="POST" action="sign-in">
                                         @csrf
-                                        <label>Name</label>
-                                        <div class="mb-3">
-                                            <input type="text" id="name" name="name" class="form-control"
-                                                placeholder="Enter your name" aria-label="Name"
-                                                aria-describedby="name-addon">
-                                        </div>
                                         <label>Email Address</label>
                                         <div class="mb-3">
                                             <input type="email" id="email" name="email" class="form-control"
-                                                placeholder="Enter your email address" aria-label="Email"
-                                                aria-describedby="email-addon">
+                                                placeholder="Enter your email address"
+                                                value="{{ old('email') ? old('email') : 'admin@corporateui.com' }}"
+                                                aria-label="Email" aria-describedby="email-addon">
                                         </div>
                                         <label>Password</label>
                                         <div class="mb-3">
-                                            <input type="password" id="password" name="password" class="form-control"
-                                                placeholder="Enter password" aria-label="Password"
+                                            <input type="password" id="password" name="password"
+                                                value="{{ old('password') ? old('password') : 'secret' }}"
+                                                class="form-control" placeholder="Enter password" aria-label="Password"
                                                 aria-describedby="password-addon">
                                         </div>
                                         <div class="d-flex align-items-center">
