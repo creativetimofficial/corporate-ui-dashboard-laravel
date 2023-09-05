@@ -17,18 +17,23 @@
                                     <h3 class="font-weight-black text-dark display-6 text-center">Forgot password?</h3>
                                     <p class="mb-0 text-center">Enter your email below!</p>
                                 </div>
-                                <div class="text-center">
-                                    @if (session('status'))
-                                        <div class="mb-4 font-medium text-sm text-green-600">
-                                            {{ session('status') }}
-                                        </div>
-                                    @endif
-                                    @error('message')
-                                        <div class="alert alert-danger text-sm" role="alert">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                </div>
+                                @if ($errors->any())
+                                    <div class="alert alert-danger text-sm" role="alert">
+                                        @foreach ($errors->all() as $error)
+                                            {{ $error }}
+                                        @endforeach
+                                    </div>
+                                @endif
+                                @if (session('status'))
+                                    <div class="alert alert-info text-sm" role="alert">
+                                        {{ session('status') }}
+                                    </div>
+                                @endif
+                                @if (session('error'))
+                                    <div class="alert alert-danger text-sm" role="alert">
+                                        {{ session('error') }}
+                                    </div>
+                                @endif
                                 <div class="card-body">
                                     <form role="form" action="/forgot-password" method="POST">
                                         {{ csrf_field() }}

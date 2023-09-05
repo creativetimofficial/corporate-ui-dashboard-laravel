@@ -17,7 +17,7 @@ class ProfileController extends Controller
 
     public function update(Request $request)
     {
-        if (config('app.is_demo') && in_array(Auth::id(), [1, 2, 3])) {
+        if (config('app.is_demo') && in_array(Auth::id(), [1])) {
             return back()->with('error', "You are in a demo version. You are not allowed to change the email for default users.");
         }
 
