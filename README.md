@@ -258,6 +258,7 @@ You can access the dashboard either by using the "**Dashboard**" link in the lef
 
 ## File Structure
 
+
 .
 |-- app
 |   |-- Console
