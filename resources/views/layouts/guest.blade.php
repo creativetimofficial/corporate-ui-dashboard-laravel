@@ -18,7 +18,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    @if (env('IS_DEMO'))
+    @if (config('app.is_demo'))
         <title itemprop="name">
             Corporate UI Dashboard Laravel by Creative Tim & UPDIVISION
         </title>
