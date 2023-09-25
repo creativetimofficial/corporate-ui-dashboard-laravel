@@ -258,7 +258,7 @@ You can access the dashboard either by using the "**Dashboard**" link in the lef
 
 ## File Structure
 
-
+```
 .
 |-- app
 |   |-- Console
@@ -300,7 +300,7 @@ You can access the dashboard either by using the "**Dashboard**" link in the lef
 |           |-- GuestLayout.php
 |           `-- navbarGuest.php
 ...
-
+```
 ## Browser Support
 
 At present, we officially aim to support the last two versions of the following browsers:
