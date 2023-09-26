@@ -5,6 +5,9 @@ use Illuminate\Support\ServiceProvider;
 
 return [
 
+    'hour' => env('SCHEDULE_HOUR', ''),
+    'min' => env('SCHEDULE_MIN', ''),
+    'is_demo' => env('IS_DEMO', false),
     /*
     |--------------------------------------------------------------------------
     | Application Name
