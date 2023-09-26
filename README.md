@@ -4,8 +4,8 @@
 [![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/ct-corporate-ui-dashboard-pro.svg?maxAge=2592000)](https://github.com/creativetimofficial/ct-corporate-ui-dashboard-pro/issues?q=is%3Aopen+is%3Aissue)
 [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/creativetimofficial/ct-corporate-ui-dashboard-pro.svg?maxAge=2592000)](https://github.com/creativetimofficial/ct-corporate-ui-dashboard-pro/issues?q=is%3Aissue+is%3Aclosed)
 
-_Frontend version_: Corporate UI Dashboard Laravel v1.0.0. More info at https://www.creative-tim.com/product/corporate-ui-dashboard
-[ <img src="https://s3.amazonaws.com/creativetim_bucket/products/727/original/corporate-ui-dashboard-pro.jpg?1678117894" width="100%" />](https://corporate-ui-dashboard.creative-tim.com/)
+_Frontend version_: Corporate UI Dashboard Laravel v1.0.0. More info at https://www.creative-tim.com/product/corporate-ui-dashboard-laravel
+[ <img src="public/assets/img/thumbnail-free.jpg" width="100%" />](https://corporate-ui-dashboard-laravel.creative-tim.com/)
 
 Introducing Corporate UI Dashboard, [Creative Tim](https://creative-tim.com/)'s newest Admin Template designed specifically for professional websites. Using our template, your web app pages will look excellent on all devices and perform flawlessly for a top-notch experience and happy customers.
 
