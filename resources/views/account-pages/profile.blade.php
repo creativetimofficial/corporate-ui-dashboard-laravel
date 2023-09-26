@@ -459,13 +459,13 @@
                         onclick="navbarFixed(this)">
                 </div>
                 <hr class="horizontal dark my-sm-4">
-                <a class="btn bg-gradient-dark w-100"
+                <a class="btn bg-gradient-dark w-100" target="_blank"
                     href="https://www.creative-tim.com/product/corporate-ui-dashboard-laravel">Free Download</a>
-                <a class="btn btn-outline-dark w-100"
+                <a class="btn btn-outline-dark w-100" target="_blank"
                     href="https://www.creative-tim.com/learning-lab/bootstrap/license/corporate-ui-dashboard">View
                     documentation</a>
                 <div class="w-100 text-center">
-                    <a class="github-button" href="https://github.com/creativetimofficial/corporate-ui-dashboard"
+                    <a class="github-button" href="https://github.com/creativetimofficial/corporate-ui-dashboard" target="_blank"
                         data-icon="octicon-star" data-size="large" data-show-count="true"
                         aria-label="Star creativetimofficial/corporate-ui-dashboard on GitHub">Star</a>
                     <h6 class="mt-3">Thank you for sharing!</h6>
