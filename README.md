@@ -1,4 +1,4 @@
-# [Corporate UI Dashboard PRO](https://corporate-ui-dashboard-laravel.creative-tim.com)
+# [Corporate UI Dashboard](https://corporate-ui-dashboard-laravel.creative-tim.com)
 
 ![version](https://img.shields.io/badge/version-1.0.0-blue.svg)
 [![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/ct-corporate-ui-dashboard-pro.svg?maxAge=2592000)](https://github.com/creativetimofficial/ct-corporate-ui-dashboard-pro/issues?q=is%3Aopen+is%3Aissue)
