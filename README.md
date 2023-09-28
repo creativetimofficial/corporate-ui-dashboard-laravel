@@ -94,7 +94,7 @@ Besides the dashboard, the auth pages, the billing and tables pages, it has also
 
 ## Documentation
 
-The documentation for the Corporate UI Dashboard Laravel is hosted at our [website](https://www.creative-tim.com/learning-lab/bootstrap/license/corporate-ui-dashboard).
+The documentation for the Corporate UI Dashboard Laravel is hosted at our [website](https://www.creative-tim.com/learning-lab/bootstrap/login/corporate-ui-dashboard).
 
 ### Login
 
