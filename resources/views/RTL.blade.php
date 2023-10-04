@@ -158,7 +158,7 @@
                     <div class="docs-info">
                         <h6 class="up mb-0 text-end">تحتاج مساعدة?</h6>
                         <p class="text-xs font-weight-bold text-end">يرجى التحقق من مستنداتنا</p>
-                        <a href="https://www.creative-tim.com/learning-lab/bootstrap/license/corporate-ui-dashboard"
+                        <a href="https://www.creative-tim.com/learning-lab/bootstrap/installation-guide/corporate-ui-dashboard"
                             target="_blank"
                             class="font-weight-bold text-sm mb-0 icon-move-left mt-auto w-100 mb-0">توثيق
                             <i class="fas fa-arrow-left-long text-sm me-1" aria-hidden="true"></i>
