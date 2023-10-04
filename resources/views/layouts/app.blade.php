@@ -149,7 +149,7 @@
                 <a class="btn bg-gradient-dark w-100" target="_blank"
                     href="https://www.creative-tim.com/product/corporate-ui-dashboard-laravel">Free Download</a>
                 <a class="btn btn-outline-dark w-100" target="_blank"
-                    href="https://www.creative-tim.com/learning-lab/bootstrap/installation-guide/corporate-ui-dashboard-laravel">View
+                    href="https://www.creative-tim.com/learning-lab/bootstrap/installation-guide/corporate-ui-dashboard">View
                     documentation</a>
                 <div class="w-100 text-center">
                     <a class="github-button" target="_blank" href="https://github.com/creativetimofficial/corporate-ui-dashboard-laravel"
