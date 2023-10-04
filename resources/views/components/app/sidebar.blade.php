@@ -181,7 +181,7 @@
                 <div class="docs-info">
                     <h6 class="font-weight-bold up mb-2">Need help?</h6>
                     <p class="text-sm font-weight-normal">Please check our docs.</p>
-                    <a href="https://www.creative-tim.com/learning-lab/bootstrap/license/corporate-ui-dashboard"
+                    <a href="https://www.creative-tim.com/learning-lab/bootstrap/installation-guide/corporate-ui-dashboard"
                         target="_blank" class="font-weight-bold text-sm mb-0 icon-move-right mt-auto w-100 mb-0">
                         Documentation
                         <i class="fas fa-arrow-right-long text-sm ms-1" aria-hidden="true"></i>
