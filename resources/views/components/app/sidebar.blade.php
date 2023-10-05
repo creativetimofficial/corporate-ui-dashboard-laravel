@@ -126,7 +126,7 @@
             <li class="nav-item border-start my-0 pt-2">
                 <a class="nav-link position-relative ms-0 ps-2 py-2 {{ is_current_route('users.profile') ? 'active' : '' }}"
                     href="{{ route('users.profile') }}">
-                    <span class="nav-link-text ms-1">User profile</span>
+                    <span class="nav-link-text ms-1">User Profile</span>
                 </a>
             </li>
             <li class="nav-item border-start my-0 pt-2">
@@ -167,6 +167,9 @@
         </ul>
     </div>
     <div class="sidenav-footer mx-4 ">
+        <a class="btn bg-gradient-primary inline-block px-5 py-3 mx-auto text-xs align-middle transition-all ease-in border-0 rounded-lg select-none" href="https://www.creative-tim.com/product/corporate-ui-dashboard-pro-laravel" target="_blank">
+            UPGRADE TO PRO
+        </a>
         <div class="card border-radius-md" id="sidenavCard">
             <div class="card-body  text-start  p-3 w-100">
                 <div class="mb-3">
