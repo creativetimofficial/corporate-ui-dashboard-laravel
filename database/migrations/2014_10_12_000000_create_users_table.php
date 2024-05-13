@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-
+use App\Enums\Roles; 
 return new class extends Migration
 {
     /**
@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('phone')->nullable();
             $table->string('location')->nullable();
             $table->text('about')->nullable();
+            $table->string('uid')->unique(); 
+            $table->string('role')->default(Roles::USER->value); 
             $table->rememberToken();
             $table->timestamps();
         });

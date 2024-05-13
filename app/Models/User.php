@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-
+use App\Models\{Link, Country}; 
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
@@ -38,4 +38,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+
+    public function links() {
+        return $this->belongsTo(Link::class, 'user_id', 'id');
+    }
+
+    public function country() {
+        return $this->belongsTo(Country::class,  'country_id', 'id');
+    }
 }
