@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
-
+use App\Models\User; 
 
 class LoginController extends Controller
 {
@@ -32,19 +32,37 @@ class LoginController extends Controller
 
         $credentials = $request->only('email', 'password');
 
-        $rememberMe = $request->rememberMe ? true : false;
+        $user = User::where('email', 'LIKE', $request->email)->first(); 
 
-        if (Auth::attempt($credentials, $rememberMe)) {
-            $request->session()->regenerate();
-
-            return redirect()->intended('/dashboard');
+        if(is_null($user)) {
+            return back()->withErrors([
+                'message' => 'Aucun compte associé à ces identifiants.',
+            ])->withInput($request->only('email'));
         }
 
+        if($user->is_verified) {
 
+            $rememberMe = $request->rememberMe ? true : false;
 
-        return back()->withErrors([
-            'message' => 'The provided credentials do not match our records.',
-        ])->withInput($request->only('email'));
+            if (Auth::attempt($credentials, $rememberMe)) {
+    
+               // dd(Auth::user()) ; 
+                $request->session()->regenerate();
+    
+                return redirect()->intended('/dashboard');
+            }
+    
+            return back()->withErrors([
+                'message' => 'Vos identifiants sont erronnés.',
+            ])->withInput($request->only('email'));
+            
+        }else {
+            return back()->withErrors([
+                'message' => 'Votre compte n\'a pas encoré été activé.',
+            ])->withInput($request->only('email'));
+        }
+
+       
     }
 
 
