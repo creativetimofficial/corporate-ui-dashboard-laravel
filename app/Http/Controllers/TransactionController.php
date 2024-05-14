@@ -2,17 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Transactions;
+use App\Models\Transaction;
 use Illuminate\Http\Request;
-
-class TransactionsController extends Controller
+use App\Models\Country; 
+class TransactionController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $transactions = Transaction::with(['country', 'user'])->paginate(10); 
+        return view('transactions.index', [
+            'transactions' => $transactions
+        ]); 
     }
 
     /**
@@ -20,7 +23,11 @@ class TransactionsController extends Controller
      */
     public function create()
     {
-        //
+        $countries = Country::where('enabled', true)->get() ; 
+
+        return view('transactions.create', [
+            'countries' => $countries
+        ]); 
     }
 
     /**
@@ -34,15 +41,15 @@ class TransactionsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Transactions $transactions)
+    public function show(Transaction $transaction)
     {
-        //
+        
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Transactions $transactions)
+    public function edit(Transaction $transaction)
     {
         //
     }
@@ -50,7 +57,7 @@ class TransactionsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Transactions $transactions)
+    public function update(Request $request, Transaction $transaction)
     {
         //
     }
@@ -58,7 +65,7 @@ class TransactionsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Transactions $transactions)
+    public function destroy(Transaction $transaction)
     {
         //
     }

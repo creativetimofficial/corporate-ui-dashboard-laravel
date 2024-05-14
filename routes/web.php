@@ -7,7 +7,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
-use App\Http\Controllers\SocialController; 
+use App\Http\Controllers\{SocialController, TransactionController}; 
 
 /*
 |--------------------------------------------------------------------------
@@ -97,3 +97,9 @@ Route::get('/laravel-examples/users-management', [UserController::class, 'index'
 Route::prefix('socials')->group(function () {
     Route::get('/', [SocialController::class, 'index'])->name('socials'); 
 })->middleware('auth'); 
+
+Route::middleware(['auth'])->prefix('transactions')->group(function () {
+    Route::get('/', [TransactionController::class, 'index'])->name('transactions');
+    Route::get('/create', [TransactionController::class, 'create'])->name('transactions.create');  
+
+}); 
