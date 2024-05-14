@@ -40,7 +40,7 @@ class LoginController extends Controller
             ])->withInput($request->only('email'));
         }
 
-        if($user->is_verified) {
+        //if($user->is_verified) {
 
             $rememberMe = $request->rememberMe ? true : false;
 
@@ -56,11 +56,11 @@ class LoginController extends Controller
                 'message' => 'Vos identifiants sont erronnés.',
             ])->withInput($request->only('email'));
             
-        }else {
+       /* }else {
             return back()->withErrors([
                 'message' => 'Votre compte n\'a pas encoré été activé. Merci de consulter vos mails',
             ])->withInput($request->only('email'));
-        }
+        }*/
 
        
     }
