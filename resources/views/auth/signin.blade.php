@@ -14,12 +14,8 @@
                         <div class="col-xl-4 col-md-6 d-flex flex-column mx-auto">
                             <div class="card card-plain mt-8">
                                 <div class="card-header pb-0 text-left bg-transparent text-center">
-                                    <h3 class="font-weight-black text-dark display-6">Welcome back</h3>
-                                    <p class="mb-0">Welcome back!</p>
-                                    <p class="mb-0">Create a new acount<br></p>
-                                    <p class="mb-0">OR Sign in with these credentials:</p>
-                                    <p class="mb-0">Email: <b>admin@corporateui.com</b></p>
-                                    <p class="mb-0">Password: <b>secret</b></p>
+                                    <h3 class="font-weight-black text-dark display-6">Bon Retour</h3>
+                                    <p class="mb-0"></p>
                                 </div>
                                 <div class="text-center">
                                     @if (session('status'))
@@ -36,18 +32,18 @@
                                 <div class="card-body">
                                     <form role="form" class="text-start" method="POST" action="sign-in">
                                         @csrf
-                                        <label>Email Address</label>
+                                        <label>Email</label>
                                         <div class="mb-3">
                                             <input type="email" id="email" name="email" class="form-control"
-                                                placeholder="Enter your email address"
-                                                value="{{ old('email') ? old('email') : 'admin@corporateui.com' }}"
+                                                placeholder="Adresse E-mail"
+                                                value="{{ old('email') }}"
                                                 aria-label="Email" aria-describedby="email-addon">
                                         </div>
-                                        <label>Password</label>
+                                        <label>Mot de passe </label>
                                         <div class="mb-3">
                                             <input type="password" id="password" name="password"
-                                                value="{{ old('password') ? old('password') : 'secret' }}"
-                                                class="form-control" placeholder="Enter password" aria-label="Password"
+                                                value="{{ old('password') }}"
+                                                class="form-control" placeholder="Mot de passe " aria-label="Password"
                                                 aria-describedby="password-addon">
                                         </div>
                                         <div class="d-flex align-items-center">
@@ -55,29 +51,28 @@
                                                 <input class="form-check-input" type="checkbox" value=""
                                                     id="flexCheckDefault">
                                                 <label class="font-weight-normal text-dark mb-0" for="flexCheckDefault">
-                                                    Remember for 14 days
+                                                   Se souvenir de moi
                                                 </label>
                                             </div>
                                             <a href="{{ route('password.request') }}"
-                                                class="text-xs font-weight-bold ms-auto">Forgot
-                                                password</a>
+                                                class="text-xs font-weight-bold ms-auto">Mot de passe oublié ?</a>
                                         </div>
                                         <div class="text-center">
-                                            <button type="submit" class="btn btn-dark w-100 mt-4 mb-3">Sign in</button>
+                                            <button type="submit" class="btn btn-info rounded-pill w-100 mt-4 mb-3">Se connecter <i class="fa fa-arrow-right" aria-hidden="true"></i> </button>
                                             <button type="button" class="btn btn-white btn-icon w-100 mb-3">
                                                 <span class="btn-inner--icon me-1">
                                                     <img class="w-5" src="../assets/img/logos/google-logo.svg"
                                                         alt="google-logo" />
                                                 </span>
-                                                <span class="btn-inner--text">Sign in with Google</span>
+                                                <span class="btn-inner--text">Se connecter avec Google</span>
                                             </button>
                                         </div>
                                     </form>
                                 </div>
                                 <div class="card-footer text-center pt-0 px-lg-2 px-1">
                                     <p class="mb-4 text-xs mx-auto">
-                                        Don't have an account?
-                                        <a href="{{ route('sign-up') }}" class="text-dark font-weight-bold">Sign up</a>
+                                        Êtes-vous nouveau ?
+                                        <a href="{{ route('sign-up') }}" class="text-dark font-weight-bold">Inscrivez vous</a>
                                     </p>
                                 </div>
                             </div>
