@@ -63,6 +63,10 @@ Route::get('/sign-in', [LoginController::class, 'create'])
     ->middleware('guest')
     ->name('sign-in');
 
+Route::get('/otp', function () {
+    return view('auth.otp'); 
+}); 
+
 Route::post('/sign-in', [LoginController::class, 'store'])
     ->middleware('guest');
 

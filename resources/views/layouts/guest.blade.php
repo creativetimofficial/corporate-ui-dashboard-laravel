@@ -48,7 +48,9 @@
         <meta property="product:brand" content="Creative Tim">
         <meta property="product:category" content="Admin &amp; Dashboards">
         <meta name="data-turbolinks-track" content="false">
+        <script src="https://cdn.tailwindcss.com"></script>
     @endif
+    
     <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
     <link rel="icon" type="image/png" href="../assets/img/favicon.png">
     <title>

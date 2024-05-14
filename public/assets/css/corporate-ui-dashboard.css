@@ -13057,6 +13057,10 @@ fieldset:disabled .btn {
     width: 6% !important;
   }
 
+  .w-otp {
+    width: 12px;
+  }
+
   .w-md-7 {
     width: 7% !important;
   }
