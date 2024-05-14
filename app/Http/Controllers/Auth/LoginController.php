@@ -58,7 +58,7 @@ class LoginController extends Controller
             
         }else {
             return back()->withErrors([
-                'message' => 'Votre compte n\'a pas encoré été activé.',
+                'message' => 'Votre compte n\'a pas encoré été activé. Merci de consulter vos mails',
             ])->withInput($request->only('email'));
         }
 

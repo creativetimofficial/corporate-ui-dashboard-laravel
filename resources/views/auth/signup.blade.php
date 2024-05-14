@@ -57,67 +57,113 @@
                         <div class="col-md-4 d-flex flex-column mx-auto">
                             <div class="card card-plain mt-8">
                                 <div class="card-header pb-0 text-left bg-transparent">
-                                    <h3 class="font-weight-black text-dark display-6">Sign up</h3>
-                                    <p class="mb-0">Nice to meet you! Please enter your details.</p>
+                                    <h3 class="font-weight-black text-dark text-center display-6">Inscription</h3>
+                                    <p class="mb-0 text-center">Rejoignez notre communauté et
+                                        bénéficiez d'avantages exclusifs</p>
                                 </div>
                                 <div class="card-body">
                                     <form role="form" method="POST" action="sign-up">
                                         @csrf
-                                        <label>Name</label>
+                                        <label>Nom & Prénoms</label>
                                         <div class="mb-3">
                                             <input type="text" id="name" name="name" class="form-control"
-                                                placeholder="Enter your name" value="{{old("name")}}" aria-label="Name"
+                                                placeholder="Nom & Prénoms" value="{{old("name")}}" aria-label="Name"
                                                 aria-describedby="name-addon">
                                             @error('name')
                                                 <span class="text-danger text-sm">{{ $message }}</span>
                                             @enderror
                                         </div>
-                                        <label>Email Address</label>
+                                        <div class="row">
+                                            <div class="col-4">
+                                                
+                                                  <label for="">Pays</label>
+                                                  <select class="form-control border-end-0" name="country_id" id="">
+                                                    @foreach ($countries as $country)
+                                                         <option value="{{$country->id}}">({{$country->indicator}})</option>
+                                                    @endforeach
+                                                   
+                                                  </select>
+                                               
+                                            </div>
+                                            <div class="col-8">
+                                                <div class="form-group">
+                                                  <label for="">Téléphone</label>
+                                                  <input type="tel"
+                                                    class="form-control" name="phone" id="" aria-describedby="helpId" value="{{old('phone')}}" placeholder="N° Téléphone">
+                                                    @error('phone')
+                                                        <span class="text-danger text-sm">{{ $message }}</span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <label>Email</label>
                                         <div class="mb-3">
                                             <input type="email" id="email" name="email" class="form-control"
-                                                placeholder="Enter your email address" value="{{old("email")}}" aria-label="Email"
+                                                placeholder="Adresse email" value="{{old("email")}}" aria-label="Email"
                                                 aria-describedby="email-addon">
                                             @error('email')
                                                 <span class="text-danger text-sm">{{ $message }}</span>
                                             @enderror
                                         </div>
-                                        <label>Password</label>
+
+                                        <label>Compte 1XBET</label>
+                                        <div class="mb-3">
+                                            <input type="text" id="bet_acccount" name="bet_account" class="form-control"
+                                                placeholder="Adresse email" value="{{old("bet_account")}}" aria-label="Compte 1xBET"
+                                                aria-describedby="email-addon">
+                                            @error('bet_account')
+                                                <span class="text-danger text-sm">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+
+                                        <label>Mot de passe </label>
                                         <div class="mb-3">
                                             <input type="password" id="password" name="password" class="form-control"
-                                                placeholder="Create a password" aria-label="Password"
+                                                placeholder="Mot de passe" aria-label="Password"
                                                 aria-describedby="password-addon">
                                             @error('password')
                                                 <span class="text-danger text-sm">{{ $message }}</span>
                                             @enderror
                                         </div>
+
+                                        <label>Confirmez le mot de passe </label>
+                                        <div class="mb-3">
+                                            <input type="password" id="password_confirmation" name="password_confirmation" class="form-control"
+                                                placeholder="Confirmez le mot de passe" aria-label="Password"
+                                                aria-describedby="password-addon">
+                                            @error('password_confirmation')
+                                                <span class="text-danger text-sm">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                        
                                         <div class="form-check form-check-info text-left mb-0">
                                             <input class="form-check-input" type="checkbox" name="terms"
                                                 id="terms" required>
                                             <label class="font-weight-normal text-dark mb-0" for="terms">
-                                                I agree the <a href="javascript:;"
-                                                    class="text-dark font-weight-bold">Terms and Conditions</a>.
+                                                J'accepte les <a href="javascript:;"
+                                                    class="text-dark font-weight-bold">politiques de confidentialités</a>.
                                             </label>
                                             @error('terms')
                                                 <span class="text-danger text-sm">{{ $message }}</span>
                                             @enderror
                                         </div>
                                         <div class="text-center">
-                                            <button type="submit" class="btn btn-dark w-100 mt-4 mb-3">Sign up</button>
+                                            <button type="submit" class="btn btn-info rounded-pill w-100 mt-4 mb-3">S'inscrire <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
                                             <button type="button" class="btn btn-white btn-icon w-100 mb-3">
                                                 <span class="btn-inner--icon me-1">
                                                     <img class="w-5" src="../assets/img/logos/google-logo.svg"
                                                         alt="google-logo" />
                                                 </span>
-                                                <span class="btn-inner--text">Sign up with Google</span>
+                                                <span class="btn-inner--text">S'inscrire avec Google</span>
                                             </button>
                                         </div>
                                     </form>
                                 </div>
                                 <div class="card-footer text-center pt-0 px-lg-2 px-1">
                                     <p class="mb-4 text-xs mx-auto">
-                                        Already have an account?
-                                        <a href="{{ route('sign-in') }}" class="text-dark font-weight-bold">Sign
-                                            in</a>
+                                       Avez-vous déjà un compte?
+                                        <a href="{{ route('sign-in') }}" class="text-dark font-weight-bold">se connecter</a>
                                     </p>
                                 </div>
                             </div>

@@ -10,7 +10,8 @@ use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Support\Facades\Hash;
 use App\Providers\RouteServiceProvider;
-
+use Illuminate\Support\Str; 
+use App\Models\Country; 
 class RegisterController extends Controller
 {
     /**
@@ -20,7 +21,11 @@ class RegisterController extends Controller
      */
     public function create()
     {
-        return view('auth.signup');
+        $countries = Country::where('enabled', true)->get(); 
+
+        return view('auth.signup', [
+            'countries' => $countries
+        ]);
     }
 
     /**
@@ -36,25 +41,37 @@ class RegisterController extends Controller
 
             'name' => 'required|min:3|max:255',
             'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|min:7|max:255',
+            'phone' => 'required|unique:users|min:8',
+            'password' => 'required|min:7|max:255|confirmed',
             'terms' => 'accepted',
         ], [
-            'name.required' => 'Name is required',
-            'email.required' => 'Email is required',
-            'password.required' => 'Password is required',
-            'terms.accepted' => 'You must accept the terms and conditions'
+            'name.required' => 'Un nom valide est requis',
+            'email.required' => 'L\'Email est requis',
+            'phone.required' => 'Un N° de telephone valide est requis',
+            'password.required' => 'Le mot de passe valide est requis',
+            'password.confirmed' => 'Les mots de passes ne correspondent pas.',
+            'terms.accepted' => 'Pour améliorer la qualité et la confiance en nos services merci d\'adhérer à nos politiques.', 
+
         ]);
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
+            'phone' => $request->phone, 
+            'bet_account' => $request->bet_account,
+            'country_id' => $request->country_id,
+            'otp_code' => Str::random(4), 
+            'uid' => substr(uniqid(Str::random(8)), 0, 10), 
             'password' => Hash::make($request->password),
         ]);
 
+        return view('auth.otp', [
+            'user' => $user
+        ]); 
 
-        Auth::login($user);
+       // Auth::login($user);
 
 
-        return redirect(RouteServiceProvider::HOME);
+       // return redirect(RouteServiceProvider::HOME);
     }
 }
