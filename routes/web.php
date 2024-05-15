@@ -101,5 +101,5 @@ Route::prefix('socials')->group(function () {
 Route::middleware(['auth'])->prefix('transactions')->group(function () {
     Route::get('/', [TransactionController::class, 'index'])->name('transactions');
     Route::get('/create', [TransactionController::class, 'create'])->name('transactions.create');  
-
+    Route::post('/store', [TransactionController::class, 'store'])->name('transactions.store'); 
 }); 
