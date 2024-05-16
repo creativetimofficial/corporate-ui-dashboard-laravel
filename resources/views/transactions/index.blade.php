@@ -2,7 +2,11 @@
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg">
         <x-app.navbar />
 
+
         <div class="row container">
+            <div class="justify-content-start mb-4  ">
+                <a href="{{route('dashboard')}}"> <i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+            </div>
             <div class="col-md-6">
                 <h4 class="text-xl font-weight-semibold">La liste de transactions CashXbet</h4>
             </div>

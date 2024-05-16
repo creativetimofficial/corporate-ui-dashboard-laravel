@@ -2,12 +2,21 @@
     <main class="main-content  position-relative max-height-vh-100 h-100 border-radius-lg">
         <x-app.navbar />
 
-            <div class="container">
+            
+
+            <div class="container mt-2">
+                <div class="justify-content-start mt-2 mb-3">
+                    <a href="{{route('transactions')}}"> <i class="fa fa-arrow-left fa-1.5x" aria-hidden="true"></i></a>
+                </div>
+
                 <h3 class="font-weight-black text-dark text-center display-6">Retrait</h3>
                 <p class="mb-0 text-center">Effectuez vos gains en toute simplicité  et en toute rapidité </p>
 
-                <form role="form" method="POST" action="{{route('transactions.store')}}">
+                <form role="form" method="POST" class="col-lg-6" action="{{route('transactions.store')}}">
                     @csrf
+
+                    <input type="hidden" name="type" value="{{App\Enums\Types::RETRAIT->value}}">
+
                     <label>Code de retrait 1XBET</label>
                     <div class="mb-3">
                         <input type="text" id="withdraw_code" name="w_code" class="form-control"
@@ -54,7 +63,7 @@
                     <label>Nom & Prénoms du Momo </label>
                     <div class="mb-3">
                         <input type="text" id="account_name" name="account_name" class="form-control"
-                            placeholder="ID Compte  1XBET " value="{{old("bet_account")}}" aria-label="account_name"
+                            placeholder="Nom & Prénoms du compte Momo " value="{{old("bet_account")}}" aria-label="account_name"
                             aria-describedby="addon">
                         @error('account_name')
                             <span class="text-danger text-sm">{{ $message }}</span>

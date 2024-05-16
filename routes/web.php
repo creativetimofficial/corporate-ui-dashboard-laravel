@@ -103,3 +103,5 @@ Route::middleware(['auth'])->prefix('transactions')->group(function () {
     Route::get('/create', [TransactionController::class, 'create'])->name('transactions.create');  
     Route::post('/store', [TransactionController::class, 'store'])->name('transactions.store'); 
 }); 
+
+Route::get('/deposit', [TransactionController::class, 'deposit'])->middleware('auth')->name('deposit'); 
