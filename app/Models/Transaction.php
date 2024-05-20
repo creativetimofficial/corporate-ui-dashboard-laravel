@@ -13,11 +13,11 @@ class Transaction extends Model
 
     public function user() {
 
-        return $this->belongsTo(User::class, 'id', 'user_id');
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
 
     public function country() {
-        return $this->belongsTo(Country::class, 'id', 'country_id');
+        return $this->belongsTo(Country::class, 'country_id', 'id');
     }
 
     

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB; 
 use App\Models\Country; 
 use App\Enums\Types; 
 use Illuminate\Support\Str; 
@@ -15,7 +16,12 @@ class TransactionController extends Controller
      */
     public function index()
     {
-        $transactions = Transaction::with(['country', 'user'])->paginate(10); 
+        $transactions = Transaction::with(['country', 'user'])->paginate(10)->groupBy(function ($transaction) {
+            return $transaction->created_at->format("d-M-Y"); 
+        }); 
+
+       // dd($transactions); 
+
         return view('transactions.index', [
             'transactions' => $transactions
         ]); 

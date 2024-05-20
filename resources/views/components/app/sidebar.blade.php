@@ -4,7 +4,7 @@
             aria-hidden="true" id="iconSidenav"></i>
         <a class="navbar-brand d-flex align-items-center m-0"
             href=" https://demos.creative-tim.com/corporate-ui-dashboard/pages/dashboard.html " target="_blank">
-            <span class="font-weight-bold text-lg">Corporate UI</span>
+            <span class="font-weight-bold text-lg">CASH-XBET</span>
         </a>
     </div>
     <div class="collapse navbar-collapse px-4  w-auto " id="sidenav-collapse-main">
@@ -33,7 +33,7 @@
                             </g>
                         </svg>
                     </div>
-                    <span class="nav-link-text ms-1">Dashboard</span>
+                    <span class="nav-link-text ms-1">Tableau de Bord</span>
                 </a>
             </li>
             <li class="nav-item">
@@ -66,7 +66,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ is_current_route('wallet') ? 'active' : '' }} " href="{{ route('wallet') }}">
+                <a class="nav-link {{ is_current_route('transactions') ? 'active' : '' }} " href="{{ route('transactions') }}">
                     <div
                         class="icon icon-shape icon-sm px-0 text-center d-flex align-items-center justify-content-center">
                         <svg width="30px" height="30px" viewBox="0 0 48 48" version="1.1"
@@ -84,113 +84,27 @@
                             </g>
                         </svg>
                     </div>
-                    <span class="nav-link-text ms-1">Wallet</span>
+                    <span class="nav-link-text ms-1">Transactions</span>
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link  {{ is_current_route('RTL') ? 'active' : '' }}" href="{{ route('RTL') }}">
-                    <div
-                        class="icon icon-shape icon-sm px-0 text-center d-flex align-items-center justify-content-center">
-                        <svg width="30px" height="30px" viewBox="0 0 48 48" version="1.1"
-                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <title>rtl</title>
-                            <g id="rtl" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <g id="menu-alt-3" transform="translate(12.000000, 14.000000)" fill="#FFFFFF">
-                                    <path class="color-foreground"
-                                        d="M0,1.71428571 C0,0.76752 0.76752,0 1.71428571,0 L22.2857143,0 C23.2325143,0 24,0.76752 24,1.71428571 C24,2.66105143 23.2325143,3.42857143 22.2857143,3.42857143 L1.71428571,3.42857143 C0.76752,3.42857143 0,2.66105143 0,1.71428571 Z"
-                                        id="Path"></path>
-                                    <path class="color-background"
-                                        d="M0,10.2857143 C0,9.33894857 0.76752,8.57142857 1.71428571,8.57142857 L22.2857143,8.57142857 C23.2325143,8.57142857 24,9.33894857 24,10.2857143 C24,11.2325143 23.2325143,12 22.2857143,12 L1.71428571,12 C0.76752,12 0,11.2325143 0,10.2857143 Z"
-                                        id="Path"></path>
-                                    <path class="color-background"
-                                        d="M10.2857143,18.8571429 C10.2857143,17.9103429 11.0532343,17.1428571 12,17.1428571 L22.2857143,17.1428571 C23.2325143,17.1428571 24,17.9103429 24,18.8571429 C24,19.8039429 23.2325143,20.5714286 22.2857143,20.5714286 L12,20.5714286 C11.0532343,20.5714286 10.2857143,19.8039429 10.2857143,18.8571429 Z"
-                                        id="Path"></path>
-                                </g>
-                            </g>
-                        </svg>
-                    </div>
-                    <span class="nav-link-text ms-1">RTL</span>
-                </a>
-            </li>
-            <li class="nav-item mt-2">
-                <div class="d-flex align-items-center nav-link">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="ms-2"
-                        viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                        <path fill-rule="evenodd"
-                            d="M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
-                            clip-rule="evenodd" />
-                    </svg>
-                    <span class="font-weight-normal text-md ms-2">Laravel Examples</span>
-                </div>
-            </li>
+           
+            
             <li class="nav-item border-start my-0 pt-2">
                 <a class="nav-link position-relative ms-0 ps-2 py-2 {{ is_current_route('users.profile') ? 'active' : '' }}"
                     href="{{ route('users.profile') }}">
                     <span class="nav-link-text ms-1">User Profile</span>
                 </a>
             </li>
-            <li class="nav-item border-start my-0 pt-2">
-                <a class="nav-link position-relative ms-0 ps-2 py-2 {{ is_current_route('users-management') ? 'active' : '' }}"
-                    href="{{ route('users-management') }}">
-                    <span class="nav-link-text ms-1">User Management</span>
-                </a>
-            </li>
-            <li class="nav-item mt-2">
-                <div class="d-flex align-items-center nav-link">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="ms-2"
-                        viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                        <path fill-rule="evenodd"
-                            d="M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
-                            clip-rule="evenodd" />
-                    </svg>
-                    <span class="font-weight-normal text-md ms-2">Account Pages</span>
-                </div>
-            </li>
+           
+            
             <li class="nav-item border-start my-0 pt-2">
                 <a class="nav-link position-relative ms-0 ps-2 py-2 {{ is_current_route('profile') ? 'active' : '' }}"
                     href="{{ route('profile') }}">
                     <span class="nav-link-text ms-1">Profile</span>
                 </a>
             </li>
-            <li class="nav-item border-start my-0 pt-2">
-                <a class="nav-link position-relative ms-0 ps-2 py-2 {{ is_current_route('signin') ? 'active' : '' }}"
-                    href="{{ route('signin') }}">
-                    <span class="nav-link-text ms-1">Sign In</span>
-                </a>
-            </li>
-            <li class="nav-item border-start my-0 pt-2">
-                <a class="nav-link position-relative ms-0 ps-2 py-2 {{ is_current_route('signup') ? 'active' : '' }}"
-                    href="{{ route('signup') }}">
-                    <span class="nav-link-text ms-1">Sign Up</span>
-                </a>
-            </li>
+            
         </ul>
     </div>
-    <div class="sidenav-footer mx-4 ">
-        <a class="btn bg-gradient-primary inline-block px-5 py-3 mx-auto text-xs align-middle transition-all ease-in border-0 rounded-lg select-none" href="https://www.creative-tim.com/product/corporate-ui-dashboard-pro-laravel" target="_blank">
-            UPGRADE TO PRO
-        </a>
-        <div class="card border-radius-md" id="sidenavCard">
-            <div class="card-body  text-start  p-3 w-100">
-                <div class="mb-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="text-primary"
-                        viewBox="0 0 24 24" fill="currentColor" id="sidenavCardIcon">
-                        <path
-                            d="M5.625 1.5c-1.036 0-1.875.84-1.875 1.875v17.25c0 1.035.84 1.875 1.875 1.875h12.75c1.035 0 1.875-.84 1.875-1.875V12.75A3.75 3.75 0 0016.5 9h-1.875a1.875 1.875 0 01-1.875-1.875V5.25A3.75 3.75 0 009 1.5H5.625z" />
-                        <path
-                            d="M12.971 1.816A5.23 5.23 0 0114.25 5.25v1.875c0 .207.168.375.375.375H16.5a5.23 5.23 0 013.434 1.279 9.768 9.768 0 00-6.963-6.963z" />
-                    </svg>
-                </div>
-                <div class="docs-info">
-                    <h6 class="font-weight-bold up mb-2">Need help?</h6>
-                    <p class="text-sm font-weight-normal">Please check our docs.</p>
-                    <a href="https://www.creative-tim.com/learning-lab/bootstrap/installation-guide/corporate-ui-dashboard"
-                        target="_blank" class="font-weight-bold text-sm mb-0 icon-move-right mt-auto w-100 mb-0">
-                        Documentation
-                        <i class="fas fa-arrow-right-long text-sm ms-1" aria-hidden="true"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
+  
 </aside>

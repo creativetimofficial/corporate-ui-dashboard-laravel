@@ -20,33 +20,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     @if (config('app.is_demo'))
         <title itemprop="name">
-            Corporate UI Dashboard Laravel by Creative Tim & UPDIVISION
+            CASH-XBET
         </title>
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:site" content="@CreativeTim" />
         <meta name="twitter:creator" content="@CreativeTim" />
-        <meta name="twitter:title" content="Corporate UI Dashboard Laravel by Creative Tim & UPDIVISION" />
-        <meta name="twitter:description" content="Fullstack tool for building Laravel apps with hundreds of UI components and
-            ready-made CRUDs" />
+        <meta name="twitter:title" content="Déposez et retirez de l'argent sur 1XBET en toute tranquilité" />
+        <meta name="twitter:description" content="Déposez et retirez de l'argent sur 1XBET en toute tranquilité" />
         <meta name="twitter:image"
             content="https://s3.amazonaws.com/creativetim_bucket/products/737/original/corporate-ui-dashboard-laravel.jpg?1695288974" />
         <meta name="twitter:url" content="https://www.creative-tim.com/live/corporate-ui-dashboard-laravel" />
-        <meta name="description" content="Fullstack tool for building Laravel apps with hundreds of UI components
-            and ready-made CRUDs">
+        <meta name="description" content="Déposez et retirez de l'argent sur 1XBET en toute tranquilité">
         <meta name="keywords"
             content="creative tim, updivision, html dashboard, laravel, api, html css dashboard laravel,  Corporate UI Dashboard Laravel,  Corporate UI Laravel,  Corporate Dashboard Laravel, UI Dashboard Laravel, Laravel admin, laravel dashboard, Laravel dashboard, laravel admin, web dashboard, bootstrap 5 dashboard laravel, bootstrap 5, css3 dashboard, bootstrap 5 admin laravel, frontend, responsive bootstrap 5 dashboard, corporate dashboard laravel,  Corporate UI Dashboard Laravel">
         <meta property="og:app_id" content="655968634437471">
         <meta property="og:type" content="product">
-        <meta property="og:title" content="Corporate UI Dashboard Laravel by Creative Tim & UPDIVISION">
-        <meta property="og:url" content="https://www.creative-tim.com/live/corporate-ui-dashboard-laravel">
+        <meta property="og:title" content="Déposez et retirez de l'argent sur 1XBET en toute tranquilité">
+        <meta property="og:url" content="">
         <meta property="og:image"
-            content="https://s3.amazonaws.com/creativetim_bucket/products/737/original/corporate-ui-dashboard-laravel.jpg?1695288974">
+            content="">
         <meta property="product:price:amount" content="FREE">
-        <meta property="product:price:currency" content="USD">
+        <meta property="product:price:currency" content="XOF">
         <meta property="product:availability" content="in Stock">
         <meta property="product:brand" content="Creative Tim">
-        <meta property="product:category" content="Admin &amp; Dashboards">
+        <meta property="product:category" content="FINANCIAL &amp; BET">
         <meta name="data-turbolinks-track" content="false">
         <script src="https://cdn.tailwindcss.com"></script>
     @endif
@@ -54,7 +52,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
     <link rel="icon" type="image/png" href="../assets/img/favicon.png">
     <title>
-        Corporate UI by Creative Tim & UPDIVISION
+        CASH-XBET
     </title>
     <!--     Fonts and icons     -->
     <link
