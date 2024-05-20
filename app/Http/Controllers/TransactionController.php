@@ -17,7 +17,8 @@ class TransactionController extends Controller
     public function index()
     {
         $transactions = Transaction::with(['country', 'user'])->paginate(10)->groupBy(function ($transaction) {
-            return $transaction->created_at->format("d-M-Y"); 
+            setlocale(LC_TIME, "fr_FR","French");
+            return  strftime(" %d %B %G", strtotime($transaction->created_at)); 
         }); 
 
        // dd($transactions); 
@@ -106,8 +107,9 @@ class TransactionController extends Controller
      */
     public function show(string $token)
     {
-        $transaction = Transaction::where('token', 'like', $token)->first(); 
+        $transaction = Transaction::with(['user', 'country'])->where('token', 'like', $token)->first(); 
 
+       // dd($transaction); 
 
         return view('transactions.show', [
             'transaction' => $transaction
@@ -127,7 +129,11 @@ class TransactionController extends Controller
      */
     public function update(Request $request, Transaction $transaction)
     {
-        //
+        $transaction->update([
+            'status' => Status::SUCESS->value
+        ]) ; 
+
+        return redirect()->route('transaction.show', ['token' => $transaction->token]); 
     }
 
     /**
@@ -135,6 +141,25 @@ class TransactionController extends Controller
      */
     public function destroy(Transaction $transaction)
     {
-        //
+        $transaction->update([
+            'status' => Status::REJECTED->value
+        ]); 
+
+        return redirect()->route('transaction.show', ['token' => $transaction->token]); 
+    }
+
+
+    public function search(Request $request) {
+
+        $transactions = Transaction::with(['user', 'country'])->where('token', 'LIKE', $request->search)->orWhere('status', 'LIKE', $request->search)->orWhere('type', 'LIKE', $request->search)->get()->groupBy(function($transaction) {
+            setlocale(LC_TIME, "fr_FR","French");
+            return  strftime(" %d %B %G", strtotime($transaction->created_at)); 
+        }) ; 
+
+        //dd($transactions); 
+
+        return view('transactions.index', [
+            'transactions' => $transactions
+        ]);
     }
 }

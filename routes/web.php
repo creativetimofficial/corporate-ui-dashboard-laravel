@@ -100,8 +100,17 @@ Route::prefix('socials')->group(function () {
 
 Route::middleware(['auth'])->prefix('transactions')->group(function () {
     Route::get('/', [TransactionController::class, 'index'])->name('transactions');
-    Route::get('/create', [TransactionController::class, 'create'])->name('transactions.create');  
+    Route::get('/create', [TransactionController::class, 'create'])->name('transactions.create'); 
     Route::post('/store', [TransactionController::class, 'store'])->name('transactions.store'); 
+
+    Route::get('/{token}', [TransactionController::class, 'show'])->where([
+        'token' =>'[a-zA-Z0-9]+'
+    ])->name('transaction.show'); 
+
+    Route::post('/search', [TransactionController::class, 'search'])->name('transactions.search'); 
+
+    Route::put('/update/{transaction}', [TransactionController::class, 'update'])->name('transaction.update'); 
+    Route::delete('/unconfirm/{transaction}', [TransactionController::class, 'delete'])->name('transaction.delete'); 
 }); 
 
 Route::get('/deposit', [TransactionController::class, 'deposit'])->middleware('auth')->name('deposit'); 
