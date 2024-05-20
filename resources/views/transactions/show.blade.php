@@ -13,13 +13,82 @@
                         <i class="fa fa-check text-info  text-9xl" aria-hidden="true"></i>
                     </div>
 
-                    <div class="text-justify text-center">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem atque dolore rerum qui ex sint veniam? Ipsam quos fugit accusantium delectus, perferendis debitis dolor hic praesentium, magni tempora at quisquam!
+                    <div class="d-flex text-center justify-content-center p-2 mb-2 align-items-center">
+                        <h3 class="text-info">
+                            {{$transaction->token}} 
+                        </h3>
+                        <span class=" badge badge-xs ms-2 badge-info text-sm"> {{$transaction->status}} </span>
                     </div>
+
+                    <div class="card-body px-0 py-0">
+                       
+                        <div class="table-responsive p-0">
+                            <table class="table align-items-center mb-0">
+                                <thead class="bg-gray-100">
+                                    <tr>
+                                        <th class="text-secondary text-xs font-weight-semibold opacity-7">
+                                           Paramètre
+                                        </th>
+                                        <th class="text-secondary text-xs font-weight-semibold opacity-7 ps-2">
+                                            Données
+                                        </th>
+                                        </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <p class="text-sm text-dark font-weight-semibold mb-0">Opération </p>
+                                            
+                                        </td>
+                                        <td class="align-middle text-center text-sm">
+                                           {{ucfirst($transaction->type)}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p class="text-sm text-dark font-weight-semibold mb-0">Status </p>
+                                            
+                                        </td>
+                                        <td class="align-middle text-center text-sm">
+                                            @if($transaction->status == App\Enums\Status::INIT->value)
+                                            <span
+                                                class="badge badge-sm border border-info text-info bg-info">{{$transaction->status}}</span>
+                                            @endif
+                                            @if($transaction->status == App\Enums\Status::PENDING->value)
+                                            <span
+                                                class="badge badge-sm border border-warning text-warning bg-warning">{{$transaction->status}}</span>
+                                            @endif
+                                            @if($transaction->status == App\Enums\Status::REJECTED->value)
+                                            <span
+                                                class="badge badge-sm border border-danger text-danger bg-danger">{{$transaction->status}}</span>
+                                            @endif
+                                            @if($transaction->status == App\Enums\Status::SUCESS->value)
+                                            <span
+                                                class="badge badge-sm border border-success text-success bg-success">{{$transaction->status}}</span>
+                                            @endif
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p class="text-sm text-dark font-weight-semibold mb-0">Date</p>
+                                            
+                                        </td>
+                                        <td class="align-middle text-center text-sm">
+                                           {{ $transaction->created_at->format('d/m/Y à H:i') }}
+                                        </td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                    </div>
+
+                    
 
                     <div class="d-flex mt-4 justify-content-between">
                         <div>
-                            <form action="" method="post">
+                            <form action="{{route('transaction.update', ['transaction' => $transaction])}}" method="post">
                                 @csrf
                                 @method('PUT')
 
@@ -30,7 +99,7 @@
 
                         <div>
                             
-                            <form action="" method="post">
+                            <form action="{{route('transaction.delete', ['transaction' => $transaction])}}" method="post">
                                 @csrf
                                 @method('DELETE')
 
