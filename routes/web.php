@@ -110,7 +110,7 @@ Route::middleware(['auth'])->prefix('transactions')->group(function () {
     Route::post('/search', [TransactionController::class, 'search'])->name('transactions.search'); 
 
     Route::put('/update/{transaction}', [TransactionController::class, 'update'])->name('transaction.update'); 
-    Route::delete('/unconfirm/{transaction}', [TransactionController::class, 'delete'])->name('transaction.delete'); 
+    Route::delete('/unconfirm/{transaction}', [TransactionController::class, 'destroy'])->name('transaction.delete'); 
 }); 
 
 Route::get('/deposit', [TransactionController::class, 'deposit'])->middleware('auth')->name('deposit'); 

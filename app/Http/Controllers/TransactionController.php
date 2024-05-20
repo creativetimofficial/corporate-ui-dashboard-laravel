@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB; 
 use App\Models\Country; 
-use App\Enums\Types; 
+use App\Enums\{Types, Status}; 
 use Illuminate\Support\Str; 
 class TransactionController extends Controller
 {
