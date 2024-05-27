@@ -11,3 +11,7 @@ All notable changes to `Corporate UI Dashboard Laravel` will be documented in th
 -   Register
 -   Forgot password
 -   Profile edit
+
+## [1.1.0]
+
+### Update to Laravel 11.x
