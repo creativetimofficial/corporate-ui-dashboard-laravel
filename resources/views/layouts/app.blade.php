@@ -63,9 +63,12 @@
     <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/349ee9c857.js" crossorigin="anonymous"></script>
+    <script src="{{ asset('assets/js/custom.js') }}"></script>
     <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
     <!-- CSS Files -->
     <link id="pagestyle" href="../assets/css/corporate-ui-dashboard.css?v=1.0.0" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
+
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">

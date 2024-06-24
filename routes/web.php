@@ -8,6 +8,8 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 
+use App\Http\Controllers\ProductController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,6 +28,10 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard')->middleware('auth');
+
+Route::get('/products', function () {
+    return view('products');
+})->name('products')->middleware('auth');
 
 Route::get('/tables', function () {
     return view('tables');
@@ -87,3 +93,10 @@ Route::post('/reset-password', [ResetPasswordController::class, 'store'])
 Route::get('/laravel-examples/user-profile', [ProfileController::class, 'index'])->name('users.profile')->middleware('auth');
 Route::put('/laravel-examples/user-profile/update', [ProfileController::class, 'update'])->name('users.update')->middleware('auth');
 Route::get('/laravel-examples/users-management', [UserController::class, 'index'])->name('users-management')->middleware('auth');
+
+Route::resource('products', ProductController::class);
+Route::get('/products',[ProductController::class, 'index'])->name('products.index')->middleware('auth');
+Route::get('/products', [ProductController::class, 'index'])->name('products')->middleware('auth');
+
+// Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+
