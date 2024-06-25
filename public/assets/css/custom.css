@@ -1,0 +1,24 @@
+/* public/css/custom.css */
+
+.custom-btn, .custom-input {
+    height: 30px; /* Set the same height for buttons and input */
+    width: 30px; /* Adjust the width as needed */
+    padding: 0; /* Remove default padding */
+}
+
+.custom-input {
+    width: 50px; /* Adjust the width as needed */
+    text-align: center;
+    padding: 0.375rem 0.75rem;
+    margin: 0;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    background-color: #fff;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+
+
+.input-group-sm>.custom-btn, .input-group-sm>.custom-input {
+    height: 30px; /* Set the same height for small input groups */
+}

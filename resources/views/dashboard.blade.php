@@ -61,6 +61,7 @@
                                     </div>
                                 </div>
                             </div>
+                            @yield('content')
                             <div class="swiper-slide">
                                 <div
                                     class="card card-background shadow-none border-radius-xl card-background-after-none align-items-start mb-0">

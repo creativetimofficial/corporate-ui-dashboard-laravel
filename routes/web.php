@@ -1,5 +1,6 @@
 <?php
 
+use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
@@ -8,6 +9,9 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 
+use App\Http\Controllers\ProductController;
+
+use App\Http\Controllers\SupplierController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -51,39 +55,42 @@ Route::get('/signup', function () {
     return view('account-pages.signup');
 })->name('signup')->middleware('guest');
 
-Route::get('/sign-up', [RegisterController::class, 'create'])
-    ->middleware('guest')
-    ->name('sign-up');
+Route::get('/sign-up', [RegisterController::class, 'create'])->middleware('guest')->name('sign-up');
 
 Route::post('/sign-up', [RegisterController::class, 'store'])
     ->middleware('guest');
 
-Route::get('/sign-in', [LoginController::class, 'create'])
-    ->middleware('guest')
-    ->name('sign-in');
+Route::get('/sign-in', [LoginController::class, 'create'])->middleware('guest')->name('sign-in');
 
-Route::post('/sign-in', [LoginController::class, 'store'])
-    ->middleware('guest');
+Route::post('/sign-in', [LoginController::class, 'store'])->middleware('guest');
 
-Route::post('/logout', [LoginController::class, 'destroy'])
-    ->middleware('auth')
-    ->name('logout');
+Route::post('/logout', [LoginController::class, 'destroy'])->middleware('auth')->name('logout');
 
-Route::get('/forgot-password', [ForgotPasswordController::class, 'create'])
-    ->middleware('guest')
-    ->name('password.request');
+Route::get('/forgot-password', [ForgotPasswordController::class, 'create'])->middleware('guest')->name('password.request');
 
-Route::post('/forgot-password', [ForgotPasswordController::class, 'store'])
-    ->middleware('guest')
-    ->name('password.email');
+Route::post('/forgot-password', [ForgotPasswordController::class, 'store'])->middleware('guest')->name('password.email');
 
-Route::get('/reset-password/{token}', [ResetPasswordController::class, 'create'])
-    ->middleware('guest')
-    ->name('password.reset');
+Route::get('/reset-password/{token}', [ResetPasswordController::class, 'create'])->middleware('guest')->name('password.reset');
 
-Route::post('/reset-password', [ResetPasswordController::class, 'store'])
-    ->middleware('guest');
+Route::post('/reset-password', [ResetPasswordController::class, 'store'])->middleware('guest');
 
 Route::get('/laravel-examples/user-profile', [ProfileController::class, 'index'])->name('users.profile')->middleware('auth');
 Route::put('/laravel-examples/user-profile/update', [ProfileController::class, 'update'])->name('users.update')->middleware('auth');
 Route::get('/laravel-examples/users-management', [UserController::class, 'index'])->name('users-management')->middleware('auth');
+
+Route::resource('products', ProductController::class)->middleware('auth');
+
+Route::resource('suppliers', SupplierController::class)->middleware('auth');
+// Route::get('/suppliers', [ProductController::class, 'index'])->name('suppliers.index');
+// routes/web.php
+
+Route::get('/suppliers', [SupplierController::class,'index'])->name('suppliers');
+
+//Manual web routing
+// Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+// Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
+// Route::post('/products', [ProductController::class, 'store'])->name('products.store');
+// Route::get('/products/{product}', [ProductController::class, 'show'])->name('products.show');
+// Route::get('/products/{product}/edit', [ProductController::class, 'edit'])->name('products.edit');
+// Route::patch('/products/{product}', [ProductController::class, 'update'])->name('products.update')->middleware('auth');
+// Route::delete('/products/{product}', [ProductController::class, 'destroy'])->name('products.destroy');
