@@ -1,6 +1,7 @@
 // custom.js
 
 function updateQuantity(productId, change) {
+    console.log('Updating quantity for product ${productId} by ${change}')
     var quantityField = document.getElementById('quantity-' + productId);
     var currentQuantity = parseInt(quantityField.value);
     var newQuantity = currentQuantity + change;

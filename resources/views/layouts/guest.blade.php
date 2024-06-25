@@ -66,8 +66,6 @@
     <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
     <!-- CSS Files -->
     <link id="pagestyle" href="../assets/css/corporate-ui-dashboard.css?v=1.0.0" rel="stylesheet" />
-    {{-- <link rel="stylesheet" href="{{ asset('css/custom.css') }}"> --}}
-    {{-- <link rel="stylesheet" href="..assets/css/custom.css"> --}}
 
 </head>
 

@@ -16,9 +16,11 @@ return new class extends Migration
             $table->string('name'); // Item name
             $table->integer('quantity'); // Quantity
             $table->decimal('price', 8, 2); // Price with precision and scale
-            $table->unsignedBigInteger('supplierID'); // Supplier ID (assuming it references an id in a suppliers table)
+            $table->unsignedBigInteger('supplier_id')->nullable()->default(null); // Supplier ID (FK)
             $table->text('description')->nullable(); // Description, can be nullable
             $table->timestamps(); // Created at and Updated at columns
+
+
         });
     }
 

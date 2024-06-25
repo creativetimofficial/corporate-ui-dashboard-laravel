@@ -85,7 +85,7 @@
                             <a class="dropdown-item border-radius-md" href="javascript:;">
                                 <div class="d-flex py-1">
                                     <div class="my-auto">
-                                        <img src="../assets/img/small-logos/logo-google.svg"
+                                        <img src={{asset('assets/img/small-logos/logo-google.svg')}}
                                             class="avatar avatar-sm border-radius-sm bg-gradient-dark p-2  me-3 ">
                                     </div>
                                     <div class="d-flex flex-column justify-content-center">
@@ -134,7 +134,7 @@
                                             2 days
                                         </p>
                                     </div>
-                                </div>
+                                </div>   
                             </a>
                         </li>
                     </ul>
