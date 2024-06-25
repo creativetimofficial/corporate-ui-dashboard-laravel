@@ -21,7 +21,7 @@ class ProductController extends Controller
 
     public function create()
     {
-        $supplier = Supplier::all(); // Fetch all suppliers to populate dropdown
+        $supplier = Supplier::all(); //to populate dropdown
         return view('products.create', compact('supplier'));
     }
 
@@ -54,33 +54,6 @@ class ProductController extends Controller
         return view('products.edit', compact('product','supplier'));
     }
 
-    // public function update(Request $request, Product $product)
-    // {
-    //     // Validate the request data
-    //     $request->validate([
-    //         'name' => 'required|string|max:255',
-    //         'quantity' => 'required|integer',
-    //         'price' => 'required|numeric|regex:/^\d+(\.\d+)?$/',
-    //         'supplier_id' => 'nullable|exists:suppliers,id', // Ensure the supplier_id exists in the suppliers table
-    //         'low_limit' => 'required|integer', // Ensure the supplier_id exists in the suppliers table
-    //         'description' => 'nullable|string',
-    //     ]);
-
-    //     // Update the product
-    //     $product->update([
-    //         'name' => $request->name,
-    //         'quantity' => $request->quantity,
-    //         'price' => $request->price,
-    //         'supplier_id' => $request->supplier_id, 
-    //         'low_limit' => $request->low_limit, 
-    //         'description' => $request->description,
-    //         $product->save();
-
-    //     ]);
-    //     // Redirect to the index page with a success message
-    //     return redirect()->route('products.index')
-    //         ->with('success', 'Product updated successfully');
-    // }
 
     public function update(Request $request, Product $product)
 {
@@ -88,7 +61,6 @@ class ProductController extends Controller
     // Validate the request data
     $request->validate([
         'name' => 'required|string|max:255',
-        // 'quantity' => 'required|integer',
         'price' => 'required|numeric|regex:/^\d+(\.\d+)?$/',
         'supplier_id' => 'nullable|exists:suppliers,id', // Ensure the supplier_id exists in the suppliers table
         'low_limit' => 'required|integer', // Ensure the low_limit is an integer
@@ -98,7 +70,6 @@ class ProductController extends Controller
     // Update the product
     $product->update([
         'name' => $request->name,
-        // 'quantity' => $request->quantity,
         'price' => $request->price,
         'supplier_id' => $request->supplier_id,
         'low_limit' => $request->low_limit,

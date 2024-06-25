@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('suppliers', function (Blueprint $table) {
             $table->id(); // Primary key
-            $table->string('name'); // Supplier name
-            $table->string('address'); // Supplier address
-            $table->string('phone_number'); // Contact number
+            $table->string('name','255'); // Supplier name
+            $table->string('email','255')->unique(); // Supplier address
+            $table->string('address','255'); // Supplier address
+            $table->string('phone_number','11'); // Contact number
             $table->timestamps(); // Created at and updated at timestamps
         });
     }

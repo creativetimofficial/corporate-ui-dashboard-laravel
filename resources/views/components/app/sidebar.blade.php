@@ -89,7 +89,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ is_current_route('wallet') ? 'active' : '' }} " href="{{ route('wallet') }}">
+                <a class="nav-link {{ is_current_route('suppliers') ? 'active' : '' }} " href="{{ route('suppliers.index') }}">
                     <div
                         class="icon icon-shape icon-sm px-0 text-center d-flex align-items-center justify-content-center">
                         <svg width="30px" height="30px" viewBox="0 0 48 48" version="1.1"
@@ -107,7 +107,7 @@
                             </g>
                         </svg>
                     </div>
-                    <span class="nav-link-text ms-1">Wallet</span>
+                    <span class="nav-link-text ms-1">Suppliers</span>
                 </a>
             </li>
             <li class="nav-item">
