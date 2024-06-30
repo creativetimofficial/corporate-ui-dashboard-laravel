@@ -62,49 +62,47 @@
                         @foreach ($suppliers as $s)
                             <tr>
                                 <td>
-                                    <div class="d-flex flex-column justify-content-center ms-1">
-                                        <h6 class="mb-0 text-sm font-weight-semibold">{{ $s->name }}</h6>
-                                        <p class="text-sm text-secondary mb-0">{{ $s->name }}</p>
-                                    </div>
+                                    <a href="{{ route('suppliers.show', $s->id) }}">
+                                        <div class="d-flex flex-column justify-content-center ms-1">
+                                            <h6 class="mb-0 text-sm font-weight-semibold">{{ $s->name }}</h6>
+                                            <p class="text-sm text-secondary mb-0">ID : {{ $s->id }}</p>
+                                        </div>
+                                    </a>
 
                                 </td>
                                 <td>
                                     <p class="text-sm text-dark font-weight-semibold mb-0">{{ $s->email }}</p>
-                                    <p class="text-sm text-secondary mb-0">{{ $s->email }}</p>
                                 </td>
                                 <td class="align-middle text-center">
-                                    <span class="text-secondary text-sm font-weight-normal">{{ $s->address }}</span>
+                                    <span
+                                        class="text-secondary text-sm font-weight-normal">{{ Str::limit($s->address, 5) }}</span>
+
                                 </td>
                                 <td class="align-middle text-center">
                                     <span class="text-secondary text-sm font-weight-normal">{{ $s->phone_number }}</span>
                                 </td>
                                 <td class="align-middle text-center">
-                                    <span class="text-secondary text-sm font-weight-normal">{{ $s->updated_at }}</span>
+                                    <span
+                                        class="text-secondary text-sm font-weight-normal">{{ $s->updated_at->format('d-m-Y') }}</span>
                                 </td>
                                 <td class="align-middle text-center">
-                                    <a href="{{ route('suppliers.edit', $s->id) }}" class="btn btn-sm btn-primary mr-2">Edit</a>
+                                    <a href="{{ route('suppliers.edit', $s->id) }}"
+                                        class="btn btn-sm btn-primary mr-2">Edit</a>
                                     <form action="{{ route('suppliers.destroy', $s->id) }}" method="post" class="d-inline">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-sm btn-danger">Delete</button>
                                     </form>
                                 </td>
-
-                                <td class="align-middle text-center">
-
-
                             </tr>
                         @endforeach
                     </tbody>
                 </table>
             </div>
         </div>
-        <div class="border-top py-3 px-3 d-flex align-items-center">
-            <p class="font-weight-semibold mb-0 text-dark text-sm">Page 1 of 10</p>
-            <div class="ms-auto">
-                <button class="btn btn-sm btn-white mb-0">Previous</button>
-                <button class="btn btn-sm btn-white mb-0">Next</button>
-            </div>
+        <div class="border-top py-3 px-3 d-flex justify-content-center">
+            {{-- {{ $suppliers->links('pagination::bootstrap-4', ['class' => 'pagination-sm']) }} --}}
+            </span>
         </div>
     </div>
     </div>

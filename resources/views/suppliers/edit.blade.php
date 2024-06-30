@@ -5,8 +5,8 @@
         </div>
         <x-app.navbar />
         <div class="px-5 py-4 container-fluid ">
-            @php($p = $product)
-            <form action="{{ route('products.update', $p->id) }}" method="POST">
+            @php($s = $supplier)
+            <form action="{{ route('suppliers.update', $s->id) }}" method="POST">
                 @csrf
                 @method('PUT')
                 <div class="mt-5 mb-5 mt-lg-9 row justify-content-center">
@@ -19,10 +19,10 @@
                                 <div class="col-sm-auto col-8 my-auto">
                                     <div class="h-100">
                                         <h5 class="mb-1 font-weight-bolder">
-                                            {{ $p->name }}
+                                            {{ $s->name }}
                                         </h5>
                                         <p class="mb-0 font-weight-bold text-sm">
-                                            {{ $p->supplier_id }}
+                                            Supplier ID: {{ $s->id }}
                                         </p>
                                     </div>
                                 </div>
@@ -60,52 +60,38 @@
                             <div class="card-header">
                                 <h5>Edit Product</h5>
                             </div>
-                            <div class="pt-0 card-body">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <label for="name">Name</label>
-                                        <input type="text" name="name" id="name" value="{{ old('name', $p->name) }}" class="form-control">
-                                        @error('name')
-                                            <span class="text-danger text-sm">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                    <div class="col-6">
-                                        <label for="price">Price</label>
-                                        <input type="number" name="price" id="price" value="{{ old('price', $p->price) }}" inputmode="decimal" step="0.01" class="form-control">
-                                        @error('price')
-                                            <span class="text-danger text-sm">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-6">
-                                        <label for="supplier_id" class="form-label">Supplier</label>
-                                        <select class="form-select" id="supplier_id" name="supplier_id">
-                                            <option value="">None</option>
-                                            @foreach ($supplier as $s)
-                                                <option value="{{ $s->id }}" {{ old('supplier_id', $p->supplier_id) == $s->id ? 'selected' : '' }}>
-                                                    {{ $s->name }}</option>
-                                            @endforeach
-                                        </select>
-                                        @error('supplier_id')
-                                            <span class="text-danger text-sm">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                    <div class="col-6">
-                                        <label for="low_limit">Low Limit</label>
-                                        <input type="number" name="low_limit" id="low_limit" value="{{ old('low_limit', $p->low_limit) }}" class="form-control">
-                                        @error('low_limit')
-                                            <span class="text-danger text-sm">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                </div>
-                                <div class="row p-2">
-                                    <label for="description">Description</label>
-                                    <input type="text" name="description" id="description" value="{{ old('description', $p->description) }}" class="form-control">
-                                    @error('description')
+                            <div class="pt-0 card-body ">
+                                <div class="col-12" style="margin-bottom: 10px;">
+                                    <label for="name">Name</label>
+                                    <input type="text" name="name" id="name" value="{{ old('name', $s->name) }}" class="form-control">
+                                    @error('name')
                                         <span class="text-danger text-sm">{{ $message }}</span>
                                     @enderror
                                 </div>
+                                <div class="row" style="margin-bottom: 10px;" >
+                                    <div class="col-6">
+                                        <label for="email">Email</label>
+                                        <input type="email" name="email" id="email" value="{{ old('email', $s->email) }}" class="form-control">
+                                        @error('email')
+                                            <span class="text-danger text-sm">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                    <div class="col-6" style="margin-bottom: 10px;">
+                                        <label for="phone_number">Phone Number</label>
+                                        <input type="text" name="phone_number" id="phone_number" value="{{ old('phone_number', $s->phone_number) }}" class="form-control" placeholder="+1 (123) 456-7890">
+                                        @error('phone_number')
+                                            <span class="text-danger text-sm">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                    <div class="col-12" style="margin-bottom: 10px;">
+                                        <label for="address">Address</label>
+                                        <input type="text" name="address" id="address" value="{{ old('address', $s->address) }}" class="form-control">
+                                        @error('address')
+                                            <span class="text-danger text-sm">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+                               
                                 <button type="submit" class="mt-6 mb-0 btn btn-white btn-sm float-end">Save changes</button>
                             </div>
                         </div>

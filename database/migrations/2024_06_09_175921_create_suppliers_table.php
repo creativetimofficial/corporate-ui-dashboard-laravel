@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name','255'); // Supplier name
             $table->string('email','255')->unique(); // Supplier address
             $table->string('address','255'); // Supplier address
-            $table->string('phone_number','11'); // Contact number
+            $table->string('phone_number','13'); // Contact number
             $table->timestamps(); // Created at and updated at timestamps
         });
     }
