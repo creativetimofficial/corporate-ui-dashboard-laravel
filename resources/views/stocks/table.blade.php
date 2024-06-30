@@ -1,20 +1,16 @@
 @section('content')
-    <script src="{{ asset('js/script.js') }}"></script>
-
-    <div class="card border shadow-xs mb-4">
+    <div class="card border shadow-xs mb-5">
         <div class="card-header border-bottom pb-0">
             <div class="d-sm-flex align-items-center">
                 <div>
-                    <h6 class="font-weight-semibold text-lg mb-0">Inventory Item</h6>
+                    <h6 class="font-weight-semibold text-lg mb-0">Item Stocks</h6>
                     <p class="text-sm">See information about current inventory</p>
                 </div>
                 <div class="ms-auto d-flex">
-                    <button type="button" class="btn btn-sm btn-white me-2">
-                        View all
-                    </button>
-                    <a href="{{ route('products.create') }}" class="btn btn-dark btn-icon d-flex align-items-center">
-                        <span class="btn-inner--text">Add Product</span>
+                    <a href="{{ route('stocks.update-stock') }}" class="btn btn-dark btn-icon d-flex align-items-center">
+                        <span class="btn-inner--text">Update Inventory</span>
                     </a>
+
                 </div>
             </div>
         </div>
@@ -38,30 +34,30 @@
                             </path>
                         </svg>
                     </span>
-                    <input type="text" class="form-control" placeholder="Search">
+                    <input type="text" id="search-input" class="form-control" placeholder="Search">
                 </div>
             </div>
             <div class="table-responsive p-0">
                 <table class="table align-items-center mb-0">
                     <thead class="bg-gray-100">
                         <tr>
-                            <th class=" text-xs font-weight-semibold opacity-7">
-                                Name</th>
-                            <th class="text-center  text-xs font-weight-semibold opacity-7">
+                            <th class="text-secondary text-xs font-weight-semibold opacity-7">Name
+                            </th>
+                            <th class="text-center text-secondary text-xs font-weight-semibold opacity-7">
                                 Quantity</th>
-                            <th class="text-center text-xs font-weight-semibold opacity-7">
-                                Price</th>
-                            <th class="text-center  text-xs font-weight-semibold opacity-7">
+                            <th class="text-center text-secondary text-xs font-weight-semibold opacity-7">
+                                Low Limit</th>
+                            <th class="text-center text-secondary text-xs font-weight-semibold opacity-7">
                                 Status</th>
-                            <th class="text-center  text-xs font-weight-semibold opacity-7">
+                            <th class="text-center text-secondary text-xs font-weight-semibold opacity-7">
                                 Updated on</th>
-                            <th class=" opacity-7"></th>
+                            <th class="text-secondary opacity-7"></th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($products as $p)
                             <tr>
-                                <td>
+                                <td class="ml-2">
                                     <a href="{{ route('products.show', $p->id) }}">
                                         <div class="d-flex flex-column justify-content-center ms-1">
                                             <h6 class="mb-0 text-sm font-weight-semibold">{{ $p->name }}</h6>
@@ -69,12 +65,12 @@
                                         </div>
                                     </a>
                                 </td>
-                                <td class="align-middle text-center text-sm">
+                                <td class="align-middle text-center">
                                     <p class="text-sm text-dark font-weight-semibold mb-0">{{ $p->quantity }}</p>
                                     {{-- <p class="text-sm text-secondary mb-0">{{ $p->quantity }}</p> --}}
                                 </td>
                                 <td class="align-middle text-center">
-                                    <span class="text-secondary text-sm font-weight-normal">RM {{ $p->price }}</span>
+                                    <span class="text-secondary text-sm font-weight-normal">{{ $p->low_limit }}</span>
                                 </td>
                                 <td class="align-middle text-center text-sm">
                                     @if ($p->quantity < $p->low_limit)
@@ -88,27 +84,11 @@
                                     <span class="text-secondary text-sm font-weight-normal">{{ $p->updated_at }}</span>
                                 </td>
                                 <td>
-                                    <div class="d-flex justify-content-center align-items-middle">
-                                        <a href="{{ route('products.edit', $p->id) }}"
-                                            class="btn btn-sm btn-primary mr-2 me-2">Edit</a>
-                                        <form action="{{ route('products.destroy', $p->id) }}" method="post"
-                                            class="d-inline delete-form">@csrf @method('DELETE') <button type="submit"
-                                                class="btn btn-sm btn-danger delete-button me-2" data-product-name="{{ $p->name }}">Delete</button> </form>
-                                    </div>
-                                </td>
                             </tr>
                         @endforeach
                     </tbody>
                 </table>
             </div>
         </div>
-        <div class="border-top py-3 px-3 d-flex align-items-center">
-            <p class="font-weight-semibold mb-0 text-dark text-sm">Page 1 of 10</p>
-            <div class="ms-auto">
-                <button class="btn btn-sm btn-white mb-0">Previous</button>
-                <button class="btn btn-sm btn-white mb-0">Next</button>
-            </div>
-        </div>
-    </div>
     </div>
 @endsection

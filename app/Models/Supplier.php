@@ -16,12 +16,18 @@ class Supplier extends Model
         'email',
         'address',
         'phone_number',
+        'description',
     ];
 
     public function products()
     {
-        return $this->hasMany(Product::class, 'supplierID');
+        return $this->hasMany(Product::class, 'supplier_id');
     }
+
+    public function getIdAttribute($value)
+{
+    return str_pad($value, 5, '0', STR_PAD_LEFT);
+}
 }
 
 

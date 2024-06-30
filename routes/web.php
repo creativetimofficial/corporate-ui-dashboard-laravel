@@ -9,9 +9,12 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 
+use App\Http\Controllers\DashboardController;
+
 use App\Http\Controllers\ProductController;
 
 use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\StockController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,13 +26,9 @@ use App\Http\Controllers\SupplierController;
 |
 */
 
-Route::get('/', function () {
-    return redirect('/dashboard');
-})->middleware('auth');
+Route::get('/', function () {return redirect('/dashboard');})->middleware('auth');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard')->middleware('auth');
+Route::get('/dashboard', function () {return view('dashboard'); })->name('dashboard')->middleware('auth');
 
 Route::get('/tables', function () {
     return view('tables');
@@ -78,14 +77,32 @@ Route::get('/laravel-examples/user-profile', [ProfileController::class, 'index']
 Route::put('/laravel-examples/user-profile/update', [ProfileController::class, 'update'])->name('users.update')->middleware('auth');
 Route::get('/laravel-examples/users-management', [UserController::class, 'index'])->name('users-management')->middleware('auth');
 
-Route::resource('products', ProductController::class)->middleware('auth');
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/expenses-data', [DashboardController::class, 'getExpensesData'])->name('expenses.data');
+
+
+Route::resource('products', ProductController::class)->middleware('auth')->middleware('auth');
+// Route::get('/product-usage/{product}', [ProductController::class, 'getProductUsage']);
+// Route::get('/product-expenses-chart', 'ProductExpensesChartController@index');
 
 Route::resource('suppliers', SupplierController::class)->middleware('auth');
-// Route::get('/suppliers', [ProductController::class, 'index'])->name('suppliers.index');
-// routes/web.php
 
-Route::get('/suppliers', [SupplierController::class,'index'])->name('suppliers');
+Route::resource('stocks', StockController::class)->middleware('auth');
 
+Route::put('stocks/update-stock', [ProductController::class, 'updateStock'])->name('stocks.update-stock');
+Route::post('/update-stock', [ProductController::class, 'updateStock'])->name('products.update-stock');
+// Route::get('stocks', [ProductController::class, 'editQuantities'])->name('products.editQuantities');
+
+
+Route::post('/save-inventory-records', [ProductController::class, 'saveInventoryRecord'])->name('inventory.saveRecords');
+
+Route::post('/log-usage', [ProductController::class, 'logUsage'])->name('product.logUsage');
+
+
+// Route::put('stocks/stock-update', [StockController::class,'updateStock'])->name('stocks.stock-update');
+// Route::put('stocks/{stock}', [StockController::class, 'update'])->name('stocks.update');
+// Route::get('stocks', StockController::class)->middleware('auth');
+// Route::post('stocks/update', 'StockController@update')->name('stocks.update');
 //Manual web routing
 // Route::get('/products', [ProductController::class, 'index'])->name('products.index');
 // Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');

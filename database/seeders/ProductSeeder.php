@@ -30,7 +30,7 @@ class ProductSeeder extends Seeder
                 'price' => rand(10, 100) / 10,
                 'supplier_id' => rand(1, 5),
                 'description' => 'This is an example product ' . ($i + 1) . '.',
-                'low_limit' => rand(5, 20),
+                'low_limit' => rand(5, 10),
             ]);
         }
         
